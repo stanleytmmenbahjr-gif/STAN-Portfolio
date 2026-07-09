@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Stan Portfolio Website
 
 Modern, responsive portfolio website for Stanley T. M. Menbah Jr., built with Next.js, React, TypeScript, and Tailwind CSS.
@@ -127,3 +128,6 @@ Global styles are in `app/globals.css` with:
 ## License
 
 © 2024 Stanley T. M. Menbah Jr. All rights reserved.
+=======
+# STAN-Portfolio
+>>>>>>> 9437279f8d89488b4647768bc94c67f5c0f6830a
