@@ -1,0 +1,224 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #050B1A;
+  color: white;
+}
+
+::selection {
+  background-color: rgba(0, 191, 255, 0.35);
+  color: white;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(0, 191, 255, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(0, 191, 255, 0.8);
+  }
+}
+
+@layer base {
+  * {
+    @apply box-border;
+  }
+
+  body {
+    @apply min-h-screen bg-[#050B1A] text-white;
+  }
+
+  a {
+    @apply transition-colors duration-200;
+  }
+}
+
+@layer utilities {
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out;
+  }
+
+  .animate-slide-in-left {
+    animation: slideInLeft 0.6s ease-out;
+  }
+
+  .animate-slide-in-right {
+    animation: slideInRight 0.6s ease-out;
+  }
+
+  .animate-pulse-glow {
+    animation: pulseGlow 3s ease-in-out infinite;
+  }
+
+  .glass {
+    @apply bg-[#0D1326]/70 backdrop-blur-md border border-cyan-400/20 rounded-xl;
+  }
+
+  .glass-dark {
+    @apply bg-[#050B1A]/50 backdrop-blur-md border border-cyan-400/15;
+  }
+
+  .neon-glow {
+    @apply shadow-[0_0_30px_rgba(0,191,255,0.5)] hover:shadow-[0_0_50px_rgba(0,191,255,0.7)];
+  }
+
+  .neon-glow-lg {
+    @apply shadow-[0_0_60px_rgba(0,191,255,0.4)] hover:shadow-[0_0_80px_rgba(0,191,255,0.6)];
+  }
+
+  .text-glow {
+    @apply text-shadow-[0_0_20px_rgba(0,191,255,0.6)];
+  }
+
+  .grayscale-hover {
+    transition: filter 0.3s ease;
+  }
+
+  .grayscale-hover:hover {
+    filter: grayscale(100%) contrast(1.1);
+  }
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #050B1A;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #00BFFF;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #0088FF;
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Premium design system additions */
+:root {
+  --primary: #00BFFF;
+  --secondary: #0088FF;
+  --bg: #050B1A;
+  --surface: #0D1326;
+  --text: #FFFFFF;
+  --glow: rgba(0, 191, 255, 0.18);
+}
+
+/* Smooth entrance / stagger helpers */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes floatDrift {
+  0% { transform: translateY(0) translateX(0); }
+  50% { transform: translateY(-8px) translateX(4px); }
+  100% { transform: translateY(0) translateX(0); }
+}
+
+@keyframes particleFloat {
+  0% { transform: translateY(0) translateX(0) scale(1); opacity: 0.8 }
+  50% { transform: translateY(-60px) translateX(20px) scale(1.05); opacity: 0.95 }
+  100% { transform: translateY(0) translateX(0) scale(1); opacity: 0.8 }
+}
+
+/* Magnetic button */
+.magnetic-btn {
+  transition: transform 0.28s cubic-bezier(.2,.9,.2,1), box-shadow 0.28s;
+  will-change: transform;
+}
+.magnetic-btn:hover { transform: translateY(-4px) scale(1.02); box-shadow: 0 10px 30px rgba(0,139,255,0.08); }
+
+/* Floating tech icons */
+.floating-icons { position: absolute; inset: auto 0 0 0; pointer-events: none; }
+.floating-icon {
+  position: absolute; opacity: 0.85; filter: drop-shadow(0 6px 18px rgba(0,191,255,0.06));
+  animation: floatDrift 6s ease-in-out infinite;
+}
+
+/* Particle system */
+.particles { position: fixed; inset: 0; pointer-events: none; z-index: 0; overflow: hidden; }
+.particles .particle {
+  position: absolute; background: linear-gradient(135deg, rgba(0,191,255,0.08), rgba(0,136,255,0.04));
+  border-radius: 999px; mix-blend-mode: screen; opacity: 0.9;
+  animation: particleFloat var(--duration, 12s) ease-in-out infinite;
+}
+
+/* Cursor dot */
+.cursor-dot { position: fixed; width: 10px; height: 10px; border-radius: 999px; background: var(--primary); transform: translate(-50%, -50%); pointer-events: none; z-index: 9999; transition: transform .12s linear, width .12s linear, height .12s linear; box-shadow: 0 0 12px rgba(0,191,255,0.14); }
+.cursor-dot.active { width: 36px; height: 36px; opacity: 0.12; }
+
+/* Subtle glass edges for sections */
+.section-edge { box-shadow: 0 6px 30px rgba(2,6,23,0.6), inset 0 1px 0 rgba(255,255,255,0.02); border-radius: 16px; }
+
+/* Stagger utility for JS-driven reveals */
+.stagger-parent > * { opacity: 0; transform: translateY(10px); }
+.stagger-parent.revealed > * { animation: fadeUp 0.6s ease-out forwards; }
+.stagger-parent.revealed > *:nth-child(1){ animation-delay: 0.06s }
+.stagger-parent.revealed > *:nth-child(2){ animation-delay: 0.12s }
+.stagger-parent.revealed > *:nth-child(3){ animation-delay: 0.18s }
+.stagger-parent.revealed > *:nth-child(4){ animation-delay: 0.24s }
+.stagger-parent.revealed > *:nth-child(5){ animation-delay: 0.30s }
+
+/* Make sure top-level layout preserves z-order */
+main.site-content { position: relative; z-index: 10; }
+
