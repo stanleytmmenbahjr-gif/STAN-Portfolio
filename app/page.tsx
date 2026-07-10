@@ -148,20 +148,6 @@ const projects = [
     link: 'https://pcc-web.netlify.app',
     image: '/paynesville-city-church.png',
   },
-  {
-    title: 'Stanley’s Chatbot',
-    description: 'Interactive chatbot experience built to showcase conversational AI and user engagement.',
-    tags: ['AI', 'Chatbot', 'UX'],
-    link: 'https://stanleys-chatbot.netlify.app',
-    image: '/stanleys-chatbot.svg',
-  },
-  {
-    title: 'Graphics Design Area',
-    description: 'A dedicated graphics project section highlighting logos, banners, posters, and visual identity work.',
-    tags: ['Graphic Design', 'Branding', 'Visuals'],
-    link: '#graphics',
-    image: '/pace.png',
-  },
 ];
 
 const graphicsDesigns = [
@@ -188,6 +174,14 @@ const graphicsDesigns = [
   {
     title: 'Graphic Teaser Poster',
     image: '/image-1783475023403.png',
+  },
+  {
+    title: 'Admission Flyer',
+    image: '/Admission flyer.png',
+  },
+  {
+    title: 'Area Week 2026',
+    image: '/Area Week 2.jpg',
   },
 ];
 
@@ -424,7 +418,7 @@ export default function Home() {
           <SectionHeading
             eyebrow="Graphics"
             title="Design Showcase"
-            description="Display your posters, event creatives, and visual branding designs."
+            description="Here are some of my posters, event creatives, and visual branding pieces that reflect my style and purpose."
           />
 
           <div className="mt-16 relative flex flex-col items-center">
