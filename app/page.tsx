@@ -62,7 +62,6 @@ const experience = [
   {
     role: 'Program Manager',
     company: 'Count Her In Liberia',
-    period: '2023 - Present',
     highlights: [
       'Lead youth development programs',
       'Coordinate outreach initiatives',
@@ -74,7 +73,6 @@ const experience = [
   {
     role: 'Media Director',
     company: 'Church of Pentecost Paynesville City Church',
-    period: '2021 - Present',
     highlights: [
       'Lead media operations',
       'Manage church branding',
@@ -85,7 +83,6 @@ const experience = [
   {
     role: 'Tech Support Team Member',
     company: 'Liberia Research & Development Network',
-    period: '2022 - 2023',
     highlights: [
       'Graphic design',
       'Photography',
@@ -96,7 +93,6 @@ const experience = [
   {
     role: 'Volunteer Tech Support',
     company: 'Smiling Faces Inc. (Academy of Young Leaders)',
-    period: '2020 - 2021',
     highlights: [
       'Event technology support',
       'Media coverage',
